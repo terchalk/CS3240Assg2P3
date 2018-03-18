@@ -1,0 +1,337 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Village</title>
+        <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+    </head>
+    
+    <body>
+        <a-scene>
+            <!-- Asset Management System -->
+            <a-assets>
+                <img id="grass" src="img/grass01.jpg">
+                <img id="grass-NRM" src="img/grass01_n.jpg">
+                <a-asset-item id="house" src="img/scene.gltf"></a-asset-item>
+                <a-asset-item id="fence" src="img/fence.gltf"></a-asset-item>
+                <a-asset-item id="gate" src="img/gate.gltf"></a-asset-item>
+                <img id="sky" src="img/sky.jpg">
+            </a-assets>
+            
+            <!--Ground -->
+            <a-plane material="color: #FFFFFF;
+                       src: #grass;
+                       repeat: 5000 5000;
+                       normal-map: #grass-NRM;
+                       normal-texture-repeat: 5000 5000"
+                     rotation="-90 0 0"
+                     scale="10000 10000 1">
+            </a-plane>
+            <!-- Sky -->
+            <a-sky src="#sky">
+            </a-sky>
+            
+            <!-- House -->
+
+            <a-entity 
+                  gltf-model="#house"
+                  scale="0.01 0.01 0.01"
+                  rotation="0 90 0"
+                  position="-1.23 0.1 -21.27"
+            >
+            </a-entity>
+            
+            <a-entity 
+                  gltf-model="#house"
+                  scale="0.01 0.01 0.01"
+                  rotation="0 -90 0" 
+                  position="2.108  0.1 9.571"
+            >
+            </a-entity>
+            
+            <a-entity 
+                  gltf-model="#house"
+                  scale="0.01 0.01 0.01"
+                  rotation="0 90 0"
+                  position="17.182  0.1 -21.27"
+            >
+            </a-entity>
+            
+            <a-entity 
+                  gltf-model="#house"
+                  scale="0.01 0.01 0.01"
+                  rotation="0 -90 0" 
+                  position="20.994  0.1 9.571"
+            >
+            </a-entity>
+            
+            <!-- Fence -->
+            <!-- Left -->
+            <a-entity 
+                    gltf-model="#fence"
+                    rotation="0 -22.5 0"
+                    position="-11.607 0 -27.092"
+            >
+            </a-entity>
+            <a-entity 
+                    gltf-model="#fence"
+                    rotation="0 -22.5 0"
+                    position="-11.607 0 -22.892"
+            >
+            </a-entity>
+            <a-entity 
+                gltf-model="#fence"
+                rotation="0 -22.5 0"
+                position="-11.607 0 -18.692"
+            >
+            </a-entity>
+            <a-entity 
+                gltf-model="#fence"
+                rotation="0 -22.5 0"
+                position="-11.607 0 2.592"
+            >
+            </a-entity>
+            <a-entity 
+                gltf-model="#fence"
+                rotation="0 -22.5 0"
+                position="-11.607 0 6.792"
+            >
+            </a-entity>
+            <a-entity 
+                gltf-model="#fence"
+                rotation="0 -22.5 0"
+                position="-11.607 0 10.992"
+            >
+            </a-entity>
+            
+            <!-- Bot -->
+            
+            <a-entity 
+                gltf-model="#fence"
+                rotation="0 68.5 0"
+                position="-11.646 0 15.111"
+            >
+            </a-entity>  
+            <a-entity 
+                gltf-model="#fence"
+                rotation="0 68.5 0"
+                position="-11.646 0 15.111"
+            >
+            </a-entity> 
+            <a-entity 
+                gltf-model="#fence"
+                rotation="0 68.5 0"
+                position="-11.646 0 15.111"
+            >
+            </a-entity> 
+            <a-entity 
+                gltf-model="#fence"
+                rotation="0 68.5 0"
+                position="-11.646 0 15.111"
+            >
+            </a-entity> 
+            <a-entity 
+                gltf-model="#fence"
+                rotation="0 68.5 0"
+                position="-7.446 0 15.111"
+            >
+            </a-entity> 
+            <a-entity 
+                gltf-model="#fence"
+                rotation="0 68.5 0"
+                position="-3.246 0 15.111"
+            >
+            </a-entity> 
+            <a-entity 
+                gltf-model="#fence"
+                rotation="0 68.5 0"
+                position="0.046 0 15.111"
+            >
+            </a-entity> 
+            <a-entity 
+                gltf-model="#fence"
+                rotation="0 68.5 0"
+                position="4.146 0 15.111"
+            >
+            </a-entity>
+            <a-entity 
+                gltf-model="#fence"
+                rotation="0 68.5 0"
+                position="8.246 0 15.111"
+            >
+            </a-entity>
+            <a-entity 
+                gltf-model="#fence"
+                rotation="0 68.5 0"
+                position="12.346 0 15.111"
+            >
+            </a-entity>
+            <a-entity 
+                gltf-model="#fence"
+                rotation="0 68.5 0"
+                position="16.446 0 15.111"
+            >
+            </a-entity>
+            <a-entity 
+                gltf-model="#fence"
+                rotation="0 68.5 0"
+                position="20.546 0 15.111"
+            >
+            </a-entity>
+            <a-entity 
+                gltf-model="#fence"
+                rotation="0 68.5 0"
+                position="24.646 0 15.111"
+            >
+            </a-entity>
+            
+            <!-- Right -->
+            <a-entity 
+                    gltf-model="#fence"
+                    rotation="0 -22.5 0"
+                    position="28.847 0 -27.092"
+            >
+            </a-entity>
+            <a-entity 
+                    gltf-model="#fence"
+                    rotation="0 -22.5 0"
+                    position="28.847 0 -22.892"
+            >
+            </a-entity>
+            <a-entity 
+                gltf-model="#fence"
+                rotation="0 -22.5 0"
+                position="28.847 0 -18.692"
+            >
+            </a-entity>
+            <a-entity 
+                gltf-model="#fence"
+                rotation="0 -22.5 0"
+                position="28.847 0 -14.492"
+            >
+            </a-entity>
+            <a-entity 
+                gltf-model="#fence"
+                rotation="0 -22.5 0"
+                position="28.847 0 -10.292"
+            >
+            </a-entity>
+            <a-entity 
+                gltf-model="#fence"
+                rotation="0 -22.5 0"
+                position="28.847 0 -6.092"
+            >
+            </a-entity>
+            <a-entity 
+                gltf-model="#fence"
+                rotation="0 -22.5 0"
+                position="28.847 0 -1.917"
+            >
+            </a-entity>
+            <a-entity 
+                gltf-model="#fence"
+                rotation="0 -22.5 0"
+                position="28.847 0 2.592"
+            >
+            </a-entity>
+            <a-entity 
+                gltf-model="#fence"
+                rotation="0 -22.5 0"
+                position="28.847 0 6.792"
+            >
+            </a-entity>
+            <a-entity 
+                gltf-model="#fence"
+                rotation="0 -22.5 0"
+                position="28.847 0 10.992"
+            >
+            </a-entity>
+            <!-- Top -->
+
+            <a-entity 
+                gltf-model="#fence"
+                rotation="0 68.5 0"
+                position="-11.646 0 -27.120"
+            >
+            </a-entity>  
+            <a-entity 
+                gltf-model="#fence"
+                rotation="0 68.5 0"
+                position="-11.646 0 -27.120"
+            >
+            </a-entity> 
+            <a-entity 
+                gltf-model="#fence"
+                rotation="0 68.5 0"
+                position="-11.646 0 -27.120"
+            >
+            </a-entity> 
+            <a-entity 
+                gltf-model="#fence"
+                rotation="0 68.5 0"
+                position="-11.646 0 -27.120"
+            >
+            </a-entity> 
+            <a-entity 
+                gltf-model="#fence"
+                rotation="0 68.5 0"
+                position="-7.446 0 -27.120"
+            >
+            </a-entity> 
+            <a-entity 
+                gltf-model="#fence"
+                rotation="0 68.5 0"
+                position="-3.246 0 -27.120"
+            >
+            </a-entity> 
+            <a-entity 
+                gltf-model="#fence"
+                rotation="0 68.5 0"
+                position="0.046 0 -27.120"
+            >
+            </a-entity> 
+            <a-entity 
+                gltf-model="#fence"
+                rotation="0 68.5 0"
+                position="4.146 0 -27.120"
+            >
+            </a-entity>
+            <a-entity 
+                gltf-model="#fence"
+                rotation="0 68.5 0"
+                position="8.246 0 -27.120"
+            >
+            </a-entity>
+            <a-entity 
+                gltf-model="#fence"
+                rotation="0 68.5 0"
+                position="12.346 0 -27.120"
+            >
+            </a-entity>
+            <a-entity 
+                gltf-model="#fence"
+                rotation="0 68.5 0"
+                position="16.446 0 -27.120"
+            >
+            </a-entity>
+            <a-entity 
+                gltf-model="#fence"
+                rotation="0 68.5 0"
+                position="20.546 0 -27.120"
+            >
+            </a-entity>
+            <a-entity 
+                gltf-model="#fence"
+                rotation="0 68.5 0"
+                position="24.646 0 -27.120"
+            >
+            </a-entity>
+            
+            <!-- Gate -->
+            <a-entity 
+                gltf-model="#gate"
+                position="-11.607 0 -8.380"
+            >
+            </a-entity>
+        </a-scene>
+    </body>
+</html>
