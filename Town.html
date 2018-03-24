@@ -2,7 +2,10 @@
 <html>
     <head>
         <title>Village</title>
+        <!-- a-frame -->
         <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+        <!-- event handler for a-frame entities-->
+        <script src="https://unpkg.com/aframe-event-set-component@^4.0.0/dist/aframe-event-set-component.min.js"></script>
     </head>
     
     <body>
@@ -14,6 +17,8 @@
                 <a-asset-item id="house" src="img/scene.gltf"></a-asset-item>
                 <a-asset-item id="fence" src="img/fence.gltf"></a-asset-item>
                 <a-asset-item id="gate" src="img/gate.gltf"></a-asset-item>
+                <a-asset-item id="human-obj" src="img/models/hakan.obj_clothed.obj"></a-asset-item>
+                <a-asset-item id="human-mtl" src="img/models/hakan.obj_clothed.obj.mtl"></a-asset-item>
                 <img id="sky" src="img/sky.jpg">
             </a-assets>
             
@@ -332,6 +337,19 @@
                 position="-11.607 0 -8.380"
             >
             </a-entity>
+
+            <!-- the human model, untextured and still white and t-pose -->
+            <a-entity
+                obj-model="obj:#human-obj;mtl:#human-mtl"
+                position="0 0.8 0"
+                scale="0.1 0.1 0.1"
+                material="color: #c63939"
+            >
+            </a-entity>
+            <!-- Cursor camera to take tap inputs -->
+            <a-camera>
+                <a-cursor></a-cursor>
+            </a-camera>
         </a-scene>
     </body>
 </html>
