@@ -14,15 +14,25 @@ AFRAME.registerComponent('zoom-in', {
         var data = this.data;
         var targetEl = this.data.target;
         var el = this.el;
+        // Putting these variables into the camera's dataset
+        targetEl.dataset.isZoomed = false;
+        targetEl.dataset.zoomInCounter = 0;
 
         el.addEventListener(data.on, function () {
-            // targetEl.setAttribute('zoom', 1.5);
-            targetEl.setAttribute('fov', 40);
-            // Wait for fade to complete.
+            // Ignore zooming in if already zoomed or has reached the max counter
+            if(targetEl.dataset.isZoomed === "true") {
+                return;
+            }
+            if(targetEl.dataset.zoomInCounter > 2){
+                return;
+            }
+            targetEl.dataset.zoomInCounter++;
+            targetEl.dataset.isZoomed = true;
+            targetEl.setAttribute('fov', 30);
             setTimeout(function () {
                 // Set image.
-                // targetEl.setAttribute('zoom', 1);
                 targetEl.setAttribute('fov', 80);
+                targetEl.dataset.isZoomed = false;
             }, data.dur);
         });
     },
