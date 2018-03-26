@@ -6,6 +6,8 @@
         <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
         <!-- event handler for a-frame entities-->
         <script src="https://unpkg.com/aframe-event-set-component@^4.0.0/dist/aframe-event-set-component.min.js"></script>
+        <script src="https://unpkg.com/aframe-template-component@^3.1.1/dist/aframe-template-component.min.js"></script>
+        <script src="script.js"></script>
     </head>
     
     <body>
@@ -17,9 +19,22 @@
                 <a-asset-item id="house" src="img/scene.gltf"></a-asset-item>
                 <a-asset-item id="fence" src="img/fence.gltf"></a-asset-item>
                 <a-asset-item id="gate" src="img/gate.gltf"></a-asset-item>
-                <a-asset-item id="human-obj" src="img/models/hakan.obj_clothed.obj"></a-asset-item>
-                <a-asset-item id="human-mtl" src="img/models/hakan.obj_clothed.obj.mtl"></a-asset-item>
+                <a-asset-item id="woman" src="img/woman.gltf"></a-asset-item>
                 <img id="sky" src="img/sky.jpg">
+
+                <!-- Template for players to look at. -->
+                <script id="look" type="text/html">
+                    <a-entity
+                        class="look"
+                        geometry="primitive: plane; height:${height}; width:${width};"
+                        material="side: double; opacity:0.3; transparent: true;" 
+                        event-set__1="_event: mousedown; scale: 1 1 1"
+                        event-set__2="_event: mouseup; scale: 1.2 1.2 1"
+                        event-set__3="_event: mouseenter; scale: 1.2 1.2 1"
+                        event-set__4="_event: mouseleave; scale: 1 1 1"
+                        zoom-in="on: click; target: #camera; dur: 1500"
+                    ></a-entity>
+                </script>
             </a-assets>
             
             <!--Ground -->
@@ -337,18 +352,26 @@
                 position="-11.607 0 -8.380"
             >
             </a-entity>
+            <!-- the human model and boxes to detect gaze taps-->
+            <a-entity position="0 0 0">
+                <a-entity gltf-model="#woman" position="0 0 0" scale="0.001 0.001 0.001"></a-entity>
 
-            <!-- the human model, untextured and still white and t-pose -->
-            <a-entity
-                obj-model="obj:#human-obj;mtl:#human-mtl"
-                position="0 0.8 0"
-                scale="0.1 0.1 0.1"
-                material="color: #c63939"
-            >
+                <a-entity template="src: #look" position="-0.02 1.52 0.15" data-height="0.15" data-width="0.15"></a-entity>
+                <a-entity template="src: #look" position="-0.01 1.38 0.15" data-height="0.1" data-width="0.3"></a-entity>
+                <a-entity template="src: #look" position="-0.18 1.09 0.15" data-height="0.5" data-width="0.10"></a-entity>
+                <a-entity template="src: #look" position="0.14 1.09 0.15" data-height="0.5" data-width="0.10"></a-entity>
+                <a-entity template="src: #look" position="-0.02 1.09 0.15" data-height="0.25" data-width="0.2"></a-entity>
+                <a-entity template="src: #look" position="-0.1 0.55 0.2" data-height="0.6" data-width="0.13"></a-entity>
+                <a-entity template="src: #look" position="0.105 0.55 0.2" data-height="0.6" data-width="0.13"></a-entity>
             </a-entity>
-            <!-- Cursor camera to take tap inputs -->
-            <a-camera>
-                <a-cursor></a-cursor>
+            <a-camera position="0 -0.1 0.9" id="camera" look-controls="enabled: true" wasd-controls="enabled: false">
+                <a-entity
+                    geometry='primitive: ring;radiusOuter: 0.015;radiusInner: 0.008;'
+                    material='color: black; opacity: 0.5; transparent: true'
+                    position='0 0 -0.5'
+                    cursor='fuse: false'
+                >
+                </a-entity>
             </a-camera>
         </a-scene>
     </body>
