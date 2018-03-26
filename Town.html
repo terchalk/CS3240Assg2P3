@@ -354,10 +354,46 @@
             </a-entity>
             <!-- the human model and boxes to detect gaze taps-->
             <a-entity position="0 0 0">
-                <a-entity position="-2.922 0.347 -1.172" rotation="0 40.0 0">
+                <a-entity position="-2.922 0.4 -1.172" rotation="0 55.0 0">
                     <a-plane width="2.5" height="5" color="white" material="opacity:0.3; transparent: true;">
-                        
+                        <a-entity position="0.5 1.5 0">
+                            <a-entity position="-0.15 0 0.2" text="anchor:left;width:2.5;color:black;value:Test1"></a-entity>
+                            <a-plane position="0 0 0.1" scale="0.6 0.3 0.6"
+                                event-set__enter="_event: mouseenter; material.color: #FF0000"
+                                event-set__leave="_event: mouseleave; material.color: #FFF"
+                             >
+                            </a-plane>
+                        </a-entity>
+                        <a-entity position="-0.5 1.5 0">
+                            <a-entity position="-0.15 0 0.2" text="anchor:left;width:2.5;color:black;value:Test1"></a-entity>
+                            <a-plane position="0 0 0.1" scale="0.6 0.3 0.6"
+                                event-set__enter="_event: mouseenter; material.color: #FF0000"
+                                event-set__leave="_event: mouseleave; material.color: #FFF"
+                             >
+                            </a-plane>
+                        </a-entity>
+                        <a-entity position="0.5 0.5 0">
+                            <a-entity position="-0.15 0 0.2" text="anchor:left;width:2.5;color:black;value:Test1"></a-entity>
+                            <a-plane position="0 0 0.1" scale="0.6 0.3 0.6"
+                                event-set__enter="_event: mouseenter; material.color: #FF0000"
+                                event-set__leave="_event: mouseleave; material.color: #FFF"
+                             >
+                            </a-plane>                        
+                        </a-entity>
+                        <a-entity position="-0.5 0.5 0">
+                            <a-entity position="-0.15 0 0.2" text="anchor:left;width:2.5;color:black;value:Test1"></a-entity>
+                            <a-plane position="0 0 0.1" scale="0.6 0.3 0.6"
+                                event-set__enter="_event: mouseenter; material.color: #FF0000"
+                                event-set__leave="_event: mouseleave; material.color: #FFF"
+                             >
+                            </a-plane>                        
+                        </a-entity>
                     </a-plane>
+                    <a-entity 
+                      text="anchor:center;width:2.5;color:black;value:What illness does she have? Examine her closely by clicking on her"
+                      position="0 2.3 0"
+                    >
+                    </a-entity>
                 </a-entity>
                 <a-entity gltf-model="#woman" position="0 0 0" scale="0.001 0.001 0.001"></a-entity>
 
