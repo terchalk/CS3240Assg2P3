@@ -27,7 +27,7 @@
                     <a-entity
                         class="look"
                         geometry="primitive: plane; height:${height}; width:${width};"
-                        material="side: double; opacity:0.3; transparent: true;" 
+                        material="side: double; opacity:0.0; transparent: true;" 
                         event-set__1="_event: mousedown; scale: 1 1 1"
                         event-set__2="_event: mouseup; scale: 1.2 1.2 1"
                         event-set__3="_event: mouseenter; scale: 1.2 1.2 1"
@@ -354,6 +354,11 @@
             </a-entity>
             <!-- the human model and boxes to detect gaze taps-->
             <a-entity position="0 0 0">
+                <a-entity position="-2.922 0.347 -1.172" rotation="0 40.0 0">
+                    <a-plane width="2.5" height="5" color="white" material="opacity:0.3; transparent: true;">
+                        
+                    </a-plane>
+                </a-entity>
                 <a-entity gltf-model="#woman" position="0 0 0" scale="0.001 0.001 0.001"></a-entity>
 
                 <a-entity template="src: #look" position="-0.02 1.52 0.15" data-height="0.15" data-width="0.15"></a-entity>
