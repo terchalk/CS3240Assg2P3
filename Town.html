@@ -32,9 +32,10 @@
                         event-set__2="_event: mouseup; scale: 1.2 1.2 1"
                         event-set__3="_event: mouseenter; scale: 1.2 1.2 1"
                         event-set__4="_event: mouseleave; scale: 1 1 1"
-                        zoom-in="on: click; target: #camera; dur: 5000"
+                        zoom-in="on: click; target: #camera; dur: 5000; counter: #counter;"
                     ></a-entity>
                 </script>
+                
             </a-assets>
             
             <!--Ground -->
@@ -107,46 +108,47 @@
             <!-- the human model and boxes to detect gaze taps-->
             <a-entity position="0 0 0">
                 <a-entity position="-2.922 0.4 -1.172" rotation="0 55.0 0">
-                    <a-plane width="2.5" height="5" color="#00a9D4" material="opacity:0.3; transparent: true;">
+                    <a-plane class="correct" width="2.5" height="5" color="#00a9D4" material="opacity:0.3; transparent: true;">
                         <a-entity position="0.5 1.5 0">
-                            <a-entity position="-0.15 0 0.2" text="anchor:left;width:2.5;color:white;value:Test1"></a-entity>
+                            <a-entity position="-0.15 0 0.2" text="anchor:left;width:2.5;color:white;value:Wrong"></a-entity>
                             <a-plane color="#3E8ACC" position="0 0 0.1" scale="0.6 0.3 0.6"
                                 event-set__enter="_event: mouseenter; material.color: #51506F"
                                 event-set__leave="_event: mouseleave; material.color: #3E8ACC"
+                                select-answer="isCorrect: false; target: #answerfeedback; dur: 5000"
                              >
                             </a-plane>
                         </a-entity>
                         <a-entity position="-0.5 1.5 0">
-                            <a-entity position="-0.15 0 0.2" text="anchor:left;width:2.5;color:white;value:Test1"></a-entity>
-                            <a-plane color="#3E8ACC" position="0 0 0.1" scale="0.6 0.3 0.6"
+                            <a-entity position="-0.15 0 0.2" text="anchor:left;width:2.5;color:white;value:Correct"></a-entity>
+                            <a-plane class="wrong" color="#3E8ACC" position="0 0 0.1" scale="0.6 0.3 0.6"
                                 event-set__enter="_event: mouseenter; material.color: #51506F"
                                 event-set__leave="_event: mouseleave; material.color: #3E8ACC"
+                                select-answer="isCorrect: true; target: #answerfeedback; dur: 5000"
                              >
                             </a-plane>
                         </a-entity>
                         <a-entity position="0.5 0.5 0">
-                            <a-entity position="-0.15 0 0.2" text="anchor:left;width:2.5;color:white;value:Test1"></a-entity>
-                            <a-plane color="#3E8ACC" position="0 0 0.1" scale="0.6 0.3 0.6"
+                            <a-entity position="-0.15 0 0.2" text="anchor:left;width:2.5;color:white;value:Wrong"></a-entity>
+                            <a-plane class="wrong" color="#3E8ACC" position="0 0 0.1" scale="0.6 0.3 0.6"
                                 event-set__enter="_event: mouseenter; material.color: #51506F"
                                 event-set__leave="_event: mouseleave; material.color: #3E8ACC"
-                             >
+                                select-answer="isCorrect: false; target: #answerfeedback; dur: 5000"                             
+                            >
                             </a-plane>                        
                         </a-entity>
                         <a-entity position="-0.5 0.5 0">
-                            <a-entity position="-0.15 0 0.2" text="anchor:left;width:2.5;color:white;value:Test1"></a-entity>
-                            <a-plane color="#3E8ACC" position="0 0 0.1" scale="0.6 0.3 0.6"
+                            <a-entity position="-0.15 0 0.2" text="anchor:left;width:2.5;color:white;value:Wrong"></a-entity>
+                            <a-plane class="wrong" color="#3E8ACC" position="0 0 0.1" scale="0.6 0.3 0.6"
                                 event-set__enter="_event: mouseenter; material.color: #51506F"
                                 event-set__leave="_event: mouseleave; material.color: #3E8ACC"
-                             >
+                                select-answer="isCorrect: false; target: #answerfeedback; dur: 5000"
+                            >
                             </a-plane>                        
                         </a-entity>
                     </a-plane>
-                    <a-entity 
-                      text="anchor:center;width:2.5;color:#fff;size:18;value:What illness does she have? Examine her closely by clicking on her"
-                      position="0 2.3 0"
-                      change-text-on-answer
-                    >
-                    </a-entity>
+                    <a-entity id="title"text="anchor:center;width:2.5;color:#fff;value:What illness does she have? Examine her closely by clicking on her"position="0 2.3 0"></a-entity>
+                    <a-entity id="answerfeedback"text="anchor:center;width:2.5;color:#fff;value:test"position="0.5 1.8 0.5"></a-entity>
+                    <a-entity id="counter"text="anchor:center;width:2.5;color:#fff;value:You have 3 more examines left"position="0.5 0 0.5"></a-entity>
                 </a-entity>
                 <a-entity gltf-model="#woman" position="0 0 0" scale="0.001 0.001 0.001"></a-entity>
 
